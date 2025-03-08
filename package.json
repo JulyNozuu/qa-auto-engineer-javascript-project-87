@@ -18,6 +18,7 @@
   "bugs": {
     "url": "https://github.com/JulyNozuu/qa-auto-engineer-javascript-project-87/issues"
   },
+  "type": "module",
   "homepage": "https://github.com/JulyNozuu/qa-auto-engineer-javascript-project-87#readme",
   "dependencies": {
     "commander": "^13.1.0"
