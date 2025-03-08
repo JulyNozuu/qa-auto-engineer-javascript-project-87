@@ -10,5 +10,5 @@ program
   .helpOption('-h, --help', 'output usage information')
   .option('-f, --format <type>', 'output format')
   .arguments('<filepath1> <filepath2>')
-  .action((filepath1,filepath2) => {console.log(parsing(filepath1,filepath2));});
+  .action((filepath1,filepath2) => {console.log(parsing(filepath1));console.log(parsing(filepath2));});
   program.parse();
