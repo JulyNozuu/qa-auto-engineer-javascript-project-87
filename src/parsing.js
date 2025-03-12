@@ -1,6 +1,5 @@
 import * as fs from "node:fs";
 import path from "node:path";
-import { cwd } from 'node:process';
 
 const parsing = (args) => {
     if (args[0] == '.'){
@@ -11,5 +10,3 @@ return JSON.parse(json1);
 }
     
 export default parsing;
-
-//console.log (parsing('./Desktop/file2.json'));
