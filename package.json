@@ -6,8 +6,15 @@
   "bin": {
     "gendiff": "bin/gendiff.js"
   },
+  "engines": {
+    "node": ">=21"
+  },
+  "simple-git-hooks": {
+    "pre-push": "npx lint-staged"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "vitest run",
+    "test:watch": "vitest"
   },
   "repository": {
     "type": "git",
@@ -22,5 +29,10 @@
   "homepage": "https://github.com/JulyNozuu/qa-auto-engineer-javascript-project-87#readme",
   "dependencies": {
     "commander": "^13.1.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.22.0",
+    "eslint": "^9.22.0",
+    "globals": "^16.0.0"
   }
 }

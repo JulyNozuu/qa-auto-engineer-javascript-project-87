@@ -1,9 +1,7 @@
 
 const diff = (obj1, obj2) => {
     const obj1Key = Object.keys(obj1);
-    const obj1Value = Object.values(obj1);
     const obj2Key = Object.keys(obj2);
-    const obj2Value = Object.values(obj2);
     let result = [];
     for (const key1 of obj1Key) {
         for (const key2 of obj2Key)
