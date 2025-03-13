@@ -1,3 +1,4 @@
+
 const diff = (obj1, obj2) => {
     const obj1Key = Object.keys(obj1);
     const obj1Value = Object.values(obj1);
@@ -22,9 +23,21 @@ for (const key2 of obj2Key){
 }
 
 const resultStringArray = resultString.split('\n');
-return resultStringArray;
+const sorted = resultStringArray.sort((a, b) => {
+    if (a[3] < b[3]) {
+      return -1;
+    }
+    if (a[3] < b[3]) {
+      return 1;
+    }
+    return 0;
+}
+);
+    return `{${sorted.join('\n')}\n}`;
 };
+
 export default diff;
+//console.log(diff(parsing('/Users/july/Desktop/file1.json'), parsing('/Users/july/Desktop/file2.json')));
 
 
   

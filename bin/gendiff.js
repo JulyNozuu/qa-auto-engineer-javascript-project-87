@@ -2,6 +2,7 @@
 
 import parsing from '../src/parsing.js';
 import diff from '../src/diff.js';
+//import sorted from '../src/diff.js';
 import { Command } from 'commander';
 const program = new Command();
 
@@ -15,18 +16,6 @@ program
   .action((filepath1,filepath2) => {
     const obj1 = parsing(filepath1);
     const obj2 = parsing(filepath2);
-    const sorted = diff(obj1,obj2).sort((a, b) => {
-      if (a[3] < b[3]) {
-        return -1;
-      }
-      if (a[3] < b[3]) {
-        return 1;
-      }
-      return 0;
-  }
-  );
-  const format = () => {
-    return `{${sorted.join('\n')}\n}`;
-};
-  console.log(format())});
+    const diffElement = diff(obj1,obj2);
+  console.log(diffElement)});
   program.parse();
