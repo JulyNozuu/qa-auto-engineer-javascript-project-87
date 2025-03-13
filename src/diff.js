@@ -10,15 +10,12 @@ const diff = (obj1, obj2) => {
     }
   }
   let resultString = '';
-
   for (const key1 of obj1Key) {
     if (result.includes(key1) && obj1[key1] == obj2[key1]) { resultString = `${resultString}\n   ${key1}: ${obj1[key1]} `; } else if (result.includes(key1) && obj1[key1] !== obj2[key1]) { resultString = `${resultString}\n - ${key1}: ${obj1[key1]}\n + ${key1}: ${obj2[key1]} `; } else if (!result.includes(key1)) { resultString = `${resultString}\n - ${key1}: ${obj1[key1]} `; }
   }
-
   for (const key2 of obj2Key) {
     if (!result.includes(key2)) { resultString = `${resultString}\n + ${key2}: ${obj2[key2]} `; }
   }
-
   const resultStringArray = resultString.split('\n');
   const sorted = resultStringArray.sort((a, b) => {
     if (a[3] < b[3]) {
@@ -31,6 +28,5 @@ const diff = (obj1, obj2) => {
   });
   return `{${sorted.join('\n')}\n}`;
 };
-
 export default diff;
-// console.log(diff(parsing('/Users/july/Desktop/file1.json'), parsing('/Users/july/Desktop/file2.json')));
+
