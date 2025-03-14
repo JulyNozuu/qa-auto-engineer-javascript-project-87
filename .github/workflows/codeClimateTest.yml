@@ -1,9 +1,8 @@
-name: Node CI
+name: codeClimate
 
 # Trigger the workflow on push or pull request
 on:
   - push
-  - pull_request
 
 env:
   CI: true
@@ -32,9 +31,6 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
           cache: 'npm'
-      - run: make install
-      - run: make lint
-      - run: make test
       - name: Test & publish code coverage
         # Publish code coverage on Code Climate
         # https://github.com/paambaati/codeclimate-action
