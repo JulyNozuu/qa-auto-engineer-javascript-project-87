@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 import { Command } from 'commander';
-import parsing from '../src/parsing.js';
+import parsing from '../src/parsers.js';
 import diff from '../src/diff.js';
 // import sorted from '../src/diff.js';
 const program = new Command();
