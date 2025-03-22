@@ -1,4 +1,4 @@
-import defaultFormat from './DefaultFormat.js';
+import defaultFormat from './defaultFormat.js';
 import plainFormat from './plainFormat.js';
 
 const formatters = {
