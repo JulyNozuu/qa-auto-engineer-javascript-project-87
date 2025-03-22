@@ -29,7 +29,8 @@
   "homepage": "https://github.com/JulyNozuu/qa-auto-engineer-javascript-project-87#readme",
   "dependencies": {
     "commander": "^13.1.0",
-    "js-yaml": "^4.1.0"
+    "js-yaml": "^4.1.0",
+    "lodash": "^4.17.21"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3.3.0",
