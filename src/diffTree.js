@@ -1,5 +1,4 @@
 import _ from 'lodash';
-import parsing from './parsers.js';
 import diffFormat from './formatters/index.js';
 
 const diff = (obj1, obj2, formate) => {
@@ -28,4 +27,3 @@ for (const key2 of obj2Key) {
   return sortTreeFormate;
 };
 export default diff;
-
