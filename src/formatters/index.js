@@ -1,7 +1,7 @@
 
 import plainFormat from './plainFormat.js';
 import JSONFormat from './JSONFormate.js';
-import defaultFormat from './plainFormat.js';
+import defaultFormat from './defaultFormat.js';
 
 const formatters = {
     default: defaultFormat,
@@ -12,7 +12,6 @@ const formatters = {
   const diffFormat = (tree, type) => {
     if (type == 'plain'){return plainFormat(tree);
         } else if (type == 'JSON'){return JSONFormat(tree);
-        }
-        else return formatters.default(tree);
+        } else return formatters.default(tree);
     };
   export default diffFormat;
