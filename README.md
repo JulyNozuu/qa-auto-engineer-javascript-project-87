@@ -1,4 +1,5 @@
 ### Hexlet tests and linter status:
+
 [![Actions Status](https://github.com/JulyNozuu/qa-auto-engineer-javascript-project-87/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/JulyNozuu/qa-auto-engineer-javascript-project-87/actions)
 
 <a href="https://codeclimate.com/github/JulyNozuu/qa-auto-engineer-javascript-project-87/maintainability"><img src="https://api.codeclimate.com/v1/badges/7ca5a92f57530c835b83/maintainability" /></a>
@@ -14,4 +15,3 @@ https://asciinema.org/a/G127zwRDTdVoei4pSjev7VC7f
 https://asciinema.org/a/GXO57LQA6rogm1MJ8nD3FPcwH
 
 https://asciinema.org/a/51luiTUtviDvADFGpp8Oo21WC
-

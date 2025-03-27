@@ -1,29 +1,40 @@
-import _ from 'lodash';
-import diffFormat from './formatters/index.js';
+import _ from "lodash";
 
-const diff = (obj1, obj2, formate) => {
+const diff = (obj1, obj2) => {
   const obj1Key = Object.keys(obj1);
   const obj2Key = Object.keys(obj2);
-  const result = [];
-  for (const key1 of obj1Key) {
-    for (const key2 of obj2Key) {
-      if (key1 == key2) {
-        result.push(key1);
-      }
+  const keys = _.union(obj1Key, obj2Key);
+  let result = [];
+
+  for (const key of keys) {
+    if (obj1[key] == obj2[key]) {
+      result.push({ key: key, obj: obj1[key], action: "mapped" });
+    } else if (
+      obj1[key] !== obj2[key] &&
+      _.includes(obj1Key, key) &&
+      !_.includes(obj2Key, key)
+    ) {
+      result.push({ key: key, obj: obj1[key], action: "removed" });
+    } else if (
+      obj1[key] !== obj2[key] &&
+      _.includes(obj2Key, key) &&
+      !_.includes(obj1Key, key)
+    ) {
+      result.push({ key: key, obj: obj2[key], action: "added" });
+    } else if (
+      obj1[key] !== obj2[key] &&
+      _.includes(obj1Key, key) &&
+      _.includes(obj2Key, key)
+    ) {
+      result.push({
+        key: key,
+        obj1: obj1[key],
+        obj2: obj2[key],
+        action: "updated",
+      });
     }
   }
-  let result1 = [];
-  for (const key1 of obj1Key) {
-    if (result.includes(key1) && obj1[key1] == obj2[key1]) { result1.push({key:key1,obj:obj1[key1], action: 'mapped'});}
-        else if (result.includes(key1) && obj1[key1] !== obj2[key1]) {  result1.push({ key: key1, obj1: obj1[key1], obj2: obj2[key1], action: 'updated'}); } 
-        else if (!result.includes(key1)) {result1.push({ key: key1, obj: obj1[key1],action: 'removed'}) ;}
-
-  }
-for (const key2 of obj2Key) {
-    if (!result.includes(key2)) { result1.push({key:key2,obj:obj2[key2],action: 'added'});}
-  }
-  const sortTree = _.sortBy(result1, ['key']);
-  const sortTreeFormate = diffFormat(sortTree, formate);
-  return sortTreeFormate;
+  const sortTree = _.sortBy(result, ["key"]);
+  return sortTree;
 };
 export default diff;

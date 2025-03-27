@@ -1,19 +1,15 @@
-import * as fs from 'node:fs';
-import path from 'node:path';
-import yaml from 'js-yaml';
+import yaml from "js-yaml";
 
 const parsing = (args) => {
-  if (args[0] === '.') {
-    args = path.resolve(process.cwd(), args);
+  const file = args.file;
+  const formate = args.formate;
+  if (formate == "json") {
+    return JSON.parse(file);
   }
-  
-  if (args.slice(-4) == 'json'){
-    const file = fs.readFileSync(args);
-    return JSON.parse(file)};
 
-  if (args.slice(-3) == 'yml'){
-    return yaml.load(fs.readFileSync(args, 'utf8'));};
+  if (formate == "yml") {
+    return yaml.load(file, "utf8");
+  }
 };
 
 export default parsing;
-
