@@ -1,4 +1,4 @@
-import genDiff from "../src/genDiff";
+import genDiff from "../src";
 import * as fs from "node:fs";
 
 const pathJSON1 = "./__tests__/__fixtures__/test1.json";
