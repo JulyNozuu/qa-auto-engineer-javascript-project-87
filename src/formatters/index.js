@@ -11,7 +11,7 @@ const formatters = {
 const diffFormat = (tree, type) => {
   if (type == "plain") {
     return plainFormat(tree);
-  } else if (type == "JSON") {
+  } else if (type == "json") {
     return JSONFormat(tree);
   } else return formatters.default(tree);
 };
