@@ -1,7 +1,7 @@
-import makePath from "./makePath.js";
-import parsing from "./parsers.js";
-import diffTree from "./diffTree.js";
-import diffFormat from "./formatters/index.js";
+import makePath from './makePath.js';
+import parsing from './parsers.js';
+import diffTree from './diffTree.js';
+import diffFormat from './formatters/index.js';
 
 const genDiff = (path1, path2, formate) => {
   const openFile1 = makePath(path1);

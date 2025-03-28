@@ -1,14 +1,14 @@
-import yaml from "js-yaml";
+import yaml from 'js-yaml';
 
 const parsing = (args) => {
-  const file = args.file;
-  const formate = args.formate;
-  if (formate == "json") {
+  const { file } = args;
+  const { formate } = args;
+  if (formate === 'json') {
     return JSON.parse(file);
   }
 
-  if (formate == "yml") {
-    return yaml.load(file, "utf8");
+  if (formate === 'yml') {
+    return yaml.load(file, 'utf8');
   }
 };
 

@@ -1,40 +1,40 @@
-import _ from "lodash";
+import _ from 'lodash';
 
 const diff = (obj1, obj2) => {
   const obj1Key = Object.keys(obj1);
   const obj2Key = Object.keys(obj2);
   const keys = _.union(obj1Key, obj2Key);
-  let result = [];
+  const result = [];
 
   for (const key of keys) {
-    if (obj1[key] == obj2[key]) {
-      result.push({ key: key, obj: obj1[key], action: "mapped" });
+    if (obj1[key] === obj2[key]) {
+      result.push({ key, obj: obj1[key], action: 'mapped' });
     } else if (
-      obj1[key] !== obj2[key] &&
-      _.includes(obj1Key, key) &&
-      !_.includes(obj2Key, key)
+      obj1[key] !== obj2[key]
+      && _.includes(obj1Key, key)
+      && !_.includes(obj2Key, key)
     ) {
-      result.push({ key: key, obj: obj1[key], action: "removed" });
+      result.push({ key, obj: obj1[key], action: 'removed' });
     } else if (
-      obj1[key] !== obj2[key] &&
-      _.includes(obj2Key, key) &&
-      !_.includes(obj1Key, key)
+      obj1[key] !== obj2[key]
+      && _.includes(obj2Key, key)
+      && !_.includes(obj1Key, key)
     ) {
-      result.push({ key: key, obj: obj2[key], action: "added" });
+      result.push({ key, obj: obj2[key], action: 'added' });
     } else if (
-      obj1[key] !== obj2[key] &&
-      _.includes(obj1Key, key) &&
-      _.includes(obj2Key, key)
+      obj1[key] !== obj2[key]
+      && _.includes(obj1Key, key)
+      && _.includes(obj2Key, key)
     ) {
       result.push({
-        key: key,
+        key,
         obj1: obj1[key],
         obj2: obj2[key],
-        action: "updated",
+        action: 'updated',
       });
     }
   }
-  const sortTree = _.sortBy(result, ["key"]);
+  const sortTree = _.sortBy(result, ['key']);
   return sortTree;
 };
 export default diff;
