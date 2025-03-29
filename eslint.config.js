@@ -59,6 +59,9 @@ export default [
       'no-plusplus': 'off',
       'no-param-reassign': 'off',
       'no-shadow': 'off',
+      "import/extensions":'off',
+      "no-restricted-syntax":'off',
+      "consistent-return":'off',
     },
   },
 ];
