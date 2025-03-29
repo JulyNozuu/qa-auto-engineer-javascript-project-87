@@ -62,7 +62,7 @@ export default [
       "import/extensions":'off',
       "no-restricted-syntax":'off',
       "consistent-return":'off',
-      "quotes":'off',
+      "quote-props":'off',
       "key-spacing":'off',
       "no-dupe-keys":'off',
     },
