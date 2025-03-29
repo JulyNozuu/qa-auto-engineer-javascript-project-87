@@ -1,3 +1,4 @@
+/* eslint-disable fp/no-mutating-methods */
 import _ from 'lodash';
 
 const diff = (obj1, obj2) => {
