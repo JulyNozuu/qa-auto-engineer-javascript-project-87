@@ -65,6 +65,6 @@ export default [
       'quote-props':'off',
       'key-spacing':'off',
       'no-dupe-keys':'off',
-    }
+    },
   },
 ];
