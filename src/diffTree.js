@@ -8,7 +8,6 @@ const diff = (obj1, obj2) => {
 
   for (const key of keys) {
     if (obj1[key] === obj2[key]) {
-      // eslint-disable-next-line fp/no-mutating-methods
       result.push({ key, obj: obj1[key], action: 'mapped' });
     } else if (
       obj1[key] !== obj2[key]
