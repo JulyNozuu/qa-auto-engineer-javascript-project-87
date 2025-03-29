@@ -6,12 +6,10 @@ const parsing = (args) => {
   if (formate === 'json') {
     const parseFile = JSON.parse(file);
     return parseFile;
-  }
-
-  if (formate === 'yml') {
+  } if (formate === 'yml') {
     const parseFile = yaml.load(file, 'utf8');
     return parseFile;
-  }
+  } return 'Error parsing';
 };
 
 export default parsing;
