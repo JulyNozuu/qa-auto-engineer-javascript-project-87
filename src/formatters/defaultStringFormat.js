@@ -1,7 +1,7 @@
 const defaultStringFormat = (tree) => {
   let result = '';
   for (const element of tree) {
-    if (element.action == 'removed') {
+    if (element.action === 'removed') {
       result = `${result}\n  - ${element.key}: ${element.obj}`;
     } else if (element.action === 'mapped') {
       result = `${result}\n    ${element.key}: ${element.obj}`;
