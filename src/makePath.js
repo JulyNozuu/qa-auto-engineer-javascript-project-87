@@ -1,7 +1,8 @@
 import * as fs from 'node:fs';
 import path from 'node:path';
 
-const makePath = (args) => {
+const makePath = (string) => {
+  let args = string;
   if (args[0] === '.') {
     args = path.resolve(process.cwd(), args);
   }
@@ -15,7 +16,7 @@ const makePath = (args) => {
     const formate = 'yml';
     const file = fs.readFileSync(args, 'utf8');
     return { file, formate };
-  }
+  } return 'Error make path';
 };
 
 export default makePath;
