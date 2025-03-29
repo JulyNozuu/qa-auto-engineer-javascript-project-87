@@ -12,7 +12,6 @@ const parsing = (args) => {
     const parseFile = yaml.load(file, 'utf8');
     return parseFile;
   }
-  return parseFile;
 };
 
 export default parsing;
