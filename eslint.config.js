@@ -62,6 +62,9 @@ export default [
       "import/extensions":'off',
       "no-restricted-syntax":'off',
       "consistent-return":'off',
+      "quotes":'off',
+      "key-spacing":'off',
+      "no-dupe-keys":'off',
     },
   },
 ];
