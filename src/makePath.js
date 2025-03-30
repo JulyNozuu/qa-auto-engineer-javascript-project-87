@@ -1,20 +1,20 @@
 import * as fs from 'node:fs';
 import path from 'node:path';
 
-const makePath = (string) => {
-  let args = string;
+const makePath = (args) => {
+  let string;
   if (args[0] === '.') {
-    args = path.resolve(process.cwd(), args);
-  }
+    string = path.resolve(process.cwd(), args);
+  } else { string = args; }
 
-  if (args.slice(-4) === 'json') {
+  if (string.slice(-4) === 'json') {
     const formate = 'json';
-    const file = fs.readFileSync(args);
+    const file = fs.readFileSync(string);
     return { file, formate };
   }
-  if (args.slice(-3) === 'yml') {
+  if (string.slice(-3) === 'yml') {
     const formate = 'yml';
-    const file = fs.readFileSync(args, 'utf8');
+    const file = fs.readFileSync(string, 'utf8');
     return { file, formate };
   } return 'Error make path';
 };
