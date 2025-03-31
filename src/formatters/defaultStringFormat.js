@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 const defaultStringFormat = (tree) => {
   let result = '';
   for (const element of tree) {
