@@ -35,6 +35,6 @@ test.each([
 test.each([
   { file1: pathJSON1, file2: pathJSON2, result: pathResultJSON },
   { file1: YAMl1, file2: YAMl2, result: pathResultJSON },
-])('check_plain_formate', ({ file1, file2, result }) => {
+])('check_json_formate', ({ file1, file2, result }) => {
   expect(genDiff(file1, file2, 'json')).toEqual(result);
 });
