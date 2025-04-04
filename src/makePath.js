@@ -1,24 +1,15 @@
 /* eslint-disable */
 
-import * as fs from 'node:fs';
-import path from 'node:path';
+import * as fs from "node:fs";
+import path from "node:path";
 
-const makePath = (args) => {
-  let string;
-  if (args[0] === '.') {
-    string = path.resolve(process.cwd(), args);
-  } else { string = args; }
-
-  if (string.slice(-4) === 'json') {
-    const formate = 'json';
-    const file = fs.readFileSync(string);
-    return { file, formate };
+const makePath = (filePath) => {
+  if (filePath[0] === ".") {
+    filePath = path.resolve(process.cwd(), filePath);
   }
-  if (string.slice(-3) === 'yml') {
-    const formate = 'yml';
-    const file = fs.readFileSync(string, 'utf8');
-    return { file, formate };
-  } return 'Error make path';
+  const formate = path.extname(filePath).slice(1).toLowerCase();
+  const file = fs.readFileSync(filePath, "utf8");
+  return { file, formate };
 };
 
 export default makePath;
