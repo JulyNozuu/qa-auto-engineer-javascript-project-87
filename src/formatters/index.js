@@ -9,6 +9,7 @@ const formatters = {
 };
 
 const diffFormat = (tree, type) => {
+  if (!_.includes(formatters, type)) { return Error(`Unknown type: ${prop.type}`); }
   if (type == null) {
     return formatters.default(tree);
   }
