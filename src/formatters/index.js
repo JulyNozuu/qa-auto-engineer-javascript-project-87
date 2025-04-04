@@ -7,10 +7,11 @@ const formatters = {
   default: defaultStringFormat,
   plain: plainFormat,
   json: JSONFormat,
+  stylish: defaultStringFormat,
 };
 
 const diffFormat = (tree, type) => {
-  if (type == null) {
+  if (type == null || type === 'stylish') {
     return formatters.default(tree);
   }
   if (!_.includes(Object.keys(formatters), type)) {
