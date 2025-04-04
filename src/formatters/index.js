@@ -12,6 +12,6 @@ const diffFormat = (tree, type) => {
   if (type == null) {
     return formatters.default(tree);
   }
-  return formatters[type](tree);
+  return formatters[type.toLowerCase()](tree);
 };
 export default diffFormat;

@@ -7,9 +7,9 @@ const makePath = (filePath) => {
   if (filePath[0] === ".") {
     filePath = path.resolve(process.cwd(), filePath);
   }
-  const formate = path.extname(filePath).slice(1).toLowerCase();
+  const extension = path.extname(filePath).slice(1).toLowerCase();
   const file = fs.readFileSync(filePath, "utf8");
-  return { file, formate };
+  return { file, extension };
 };
 
 export default makePath;
